@@ -5,16 +5,16 @@
 
 <h2>Add a New Pet</h2>
 
-<form method="POST" action="/Pet/Add">
+<form method="POST" action="/Pet/Add" class="form-group">
     <!-- TODO: format this nicely -->
-    <div><span>Name:</span><input id="PetName" type="text" name="PetName" /></div>
+    <div><span class="bold-label">Name:</span><input id="PetName" type="text" name="PetName" class="form-control" /></div>
     <div>
-        <span>Species:</span>
-        <select id="SpeciesID" type="text" name="SpeciesID">
-            @{ 
+        <span class="bold-label">Species:</span>
+        <select id="SpeciesID" type="text" name="SpeciesID" class="form-control">
+            @{
                 //A rendering loop for presenting a list of species
                 //The pet should be one of these species
-                foreach(var species in Model)
+                foreach (var species in Model)
                 {
                     <option value="@species.SpeciesID">@species.Name</option>
 
@@ -22,11 +22,12 @@
             }
         </select>
     </div>
-    <div><span>Weight:</span><input id="PetWeight" type="text" name="PetWeight" /></div>
-    <div><span>Color:</span><input id="PetColor" type="text" name="PetColor" /></div>
-    <div>Notes:</div>
-    <textarea id="PetNotes" name="PetNotes">
+    <div><span class="bold-label">Weight:</span><input id="PetWeight" type="text" name="PetWeight" class="form-control" placeholder="Kg" /></div>
+    <div><span class="bold-label">Color:</span><input id="PetColor" type="text" name="PetColor" class="form-control" class="form-control" /></div>
+    <div><span class="bold-label">Notes:</span></div>
+    <textarea id="PetNotes" name="PetNotes" class="form-control" rows="2">
 
-    </textarea>
-    <input type="submit" value="Add Pet">
+    </textarea> <br />
+    <input type="submit" value="Add Pet" class="btn btn-default" />
+    <a href="/Pet/List" class="btn btn-default">Back to List</a>
 </form>

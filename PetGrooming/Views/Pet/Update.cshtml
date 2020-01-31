@@ -1,7 +1,33 @@
-﻿
+﻿@model PetGrooming.Models.ViewModels.UpdatePetViewModel
+
 @{
     ViewBag.Title = "Update";
 }
 
-<h2>Update</h2>
+<h2>Update Pet</h2>
+
+<form method="POST" action="/Pet/Update/@Model.pet.PetID" class="form-group">
+    <!-- NEED TO SPECIFY WHICH PET YOU'RE GOING TO UPDATE -->
+    <span class="bold-label">Pet Name: </span> <input id="PetName" name="PetName" value=" @Model.pet.PetName" class="form-control" /> 
+    <span class="bold-label">Pet Color: </span> <input id="PetColor" name="PetColor" value="@Model.pet.Color" class="form-control" />
+    <span class="bold-label">Weight: </span><input id="PetWeight" name="PetWeight" value="@Model.pet.Weight" class="form-control" />
+    <span class="bold-label">Species: </span>
+        <select name="SpeciesID" id="SpeciesID" class="form-control">
+            @{ 
+                foreach (var species in Model.species)
+                {
+                    string selected = "";
+                    if (species.SpeciesID == Model.pet.SpeciesID)
+                    {
+                        selected = "selected";
+                    }
+                    <option value="@species.SpeciesID" @selected>@species.Name</option>
+                }
+            }
+        </select>
+        <span class="bold-label">Notes: </span><textarea id="PetNotes" name="PetNotes" value="@Model.pet.Notes" class="form-control" rows="2"></textarea>
+            <input type="submit" id="submit" value="Update Pet" class="btn btn-default" />
+            <a href="/Pet/List" type="button" class="btn btn-default">Back to Pets</a>
+
+</form>
 

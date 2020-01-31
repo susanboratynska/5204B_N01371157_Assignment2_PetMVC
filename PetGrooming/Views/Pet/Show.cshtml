@@ -6,6 +6,19 @@
 
 <h2>Show Pet</h2>
 
-<div>Name : @Model.PetName</div>
-<div>Weight : @Model.Weight</div>
-<div>Species : @Model.Species.Name</div>
+
+
+<div class="float-left form-group">
+    <a href="/Pet/List" type="button" class="btn btn-default">Back to List</a><br/>
+    <span class="bold-label">Name:</span><div class="form-control">@Model.PetName</div>
+    <span class="bold-label">Weight:</span><div class="form-control">@Model.Weight Kg</div>
+    <span class="bold-label">Species:</span><div class="form-control">@Model.Species.Name</div>
+    <span class="bold-label">Notes:</span><div class="form-control">@Model.Notes</div>
+    <a href="/Pet/Update/@Model.PetID" type="button" class="btn btn-default">Update Pet</a>
+    @Html.ActionLink("Delete Pet", "Delete", new { id = @Model.PetID }, new { onclick = "return confirm('Confirm delete?');", @class = "btn btn-default" })
+</div>
+<div class="float-right">
+    <div class="btn btn-default placeholder">Placeholder: Owner Details</div>
+    <div class="btn btn-default placeholder">Placeholder: Upcoming Groom Bookings Details</div>
+</div>
+

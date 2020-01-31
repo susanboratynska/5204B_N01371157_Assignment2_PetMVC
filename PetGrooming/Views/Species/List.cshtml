@@ -1,0 +1,37 @@
+﻿@model List<PetGrooming.Models.Species>
+@{
+    ViewBag.Title = "List";
+}
+
+<h2>List of Species</h2>
+
+<a href="/Species/Add" type="button" class="btn btn-default">Add New Species</a>
+
+<table class="table-bordered table-hover">
+    <tr>
+        <th>Species Name</th>
+        <th  class="tablewidth_wide">Action</th>
+    </tr>
+    @{
+        foreach (var Species in Model)
+        {
+            <tr>
+                <td><a href="/Species/Show/@Species.SpeciesID">@Species.Name</a></td>
+                <td>
+                    <a href="/Species/Update/@Species.SpeciesID" class="btn btn-default">Edit</a>
+                    @Html.ActionLink("Delete Species", "Delete", new { id = @Species.SpeciesID }, new { onclick = "return confirm('Confirm delete?');", @class = "btn btn-default" })
+                    <!--
+                        PURPOSE: ActionLink to create a confirmation pop-up before deleting data
+                        SRC: https://stackoverflow.com/questions/14152575/pass-parameter-to-controller-from-html-actionlink-mvc-4
+
+                        PURPOSE: Add class to ActionLink
+                        SRC: https://stackoverflow.com/questions/18643457/how-do-i-add-a-class-to-an-html-actionlink/18643539
+                    -->
+                    <a href="#" class="btn btn-default placeholder">Placeholder: List of Pets of Species</a>
+                </td>
+                L
+            </tr>
+        }
+    }
+</table>
+

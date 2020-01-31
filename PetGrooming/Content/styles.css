@@ -1,0 +1,48 @@
+﻿
+
+tr {
+    text-align: center;
+}
+
+th {
+    text-align: center;
+    margin-right: 15px;
+    margin-left: 15px;
+    column-width: 125px;
+    background: lightgray;
+    padding: 10px;
+}
+
+td {
+    padding-left: 6px;
+}
+
+.tablewidth_wide {
+    column-width: 170px;
+}
+
+
+.btn-default {
+    margin: 10px 6px 6px 0;
+
+    background: lightsteelblue;
+}
+
+.placeholder{
+    background: gray;
+}
+
+.float-left{
+    width: 55%;
+    display:inline-block;
+}
+
+.float-right {
+    width: 30%;
+    float: right;
+    margin-right: 10%;
+}
+
+.bold-label{
+    font-weight: bold;
+}
