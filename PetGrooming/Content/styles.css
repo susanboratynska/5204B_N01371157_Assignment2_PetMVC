@@ -28,8 +28,9 @@ td {
     background: lightsteelblue;
 }
 
-.placeholder{
+.placeholder {
     background: gray;
+    max-width: 280px;
 }
 
 .float-left{

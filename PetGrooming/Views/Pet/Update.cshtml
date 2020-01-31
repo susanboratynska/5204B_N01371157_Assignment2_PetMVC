@@ -8,26 +8,29 @@
 
 <form method="POST" action="/Pet/Update/@Model.pet.PetID" class="form-group">
     <!-- NEED TO SPECIFY WHICH PET YOU'RE GOING TO UPDATE -->
-    <span class="bold-label">Pet Name: </span> <input id="PetName" name="PetName" value=" @Model.pet.PetName" class="form-control" /> 
+    <span class="bold-label">Pet Name: </span> <input id="PetName" name="PetName" value=" @Model.pet.PetName" class="form-control" />
     <span class="bold-label">Pet Color: </span> <input id="PetColor" name="PetColor" value="@Model.pet.Color" class="form-control" />
     <span class="bold-label">Weight: </span><input id="PetWeight" name="PetWeight" value="@Model.pet.Weight" class="form-control" />
     <span class="bold-label">Species: </span>
-        <select name="SpeciesID" id="SpeciesID" class="form-control">
-            @{ 
-                foreach (var species in Model.species)
+    <select name="SpeciesID" id="SpeciesID" class="form-control">
+        @{
+            foreach (var species in Model.species)
+            {
+                string selected = "";
+                if (species.SpeciesID == Model.pet.SpeciesID)
                 {
-                    string selected = "";
-                    if (species.SpeciesID == Model.pet.SpeciesID)
-                    {
-                        selected = "selected";
-                    }
-                    <option value="@species.SpeciesID" @selected>@species.Name</option>
+                    selected = "selected";
                 }
+                <option value="@species.SpeciesID" @selected>@species.Name</option>
             }
-        </select>
-        <span class="bold-label">Notes: </span><textarea id="PetNotes" name="PetNotes" value="@Model.pet.Notes" class="form-control" rows="2"></textarea>
-            <input type="submit" id="submit" value="Update Pet" class="btn btn-default" />
-            <a href="/Pet/List" type="button" class="btn btn-default">Back to Pets</a>
+        }
+    </select>
+    <span class="bold-label">Notes: </span><textarea id="PetNotes" name="PetNotes" class="form-control" rows="2">@Model.pet.Notes</textarea>
+    <span class="bold-label">Primary Owner: </span> <div id="OwnerPrimary" value="OwnerPrimary" class="form-control placeholder">Placeholder: Link to Owner 1</div>
+    <span class="bold-label">Secondary Owner: </span> <div id="OwnerSecondary" value="OwnerSecondary" class="form-control placeholder">Placeholder: Link to Owner 2</div>
+
+    <input type="submit" id="submit" value="Update Pet" class="btn btn-default" />
+    <a href="/Pet/List" type="button" class="btn btn-default">Back to Pets</a>
 
 </form>
 

@@ -46,17 +46,19 @@ namespace PetGrooming.Controllers
             return View(selectedspecies);
 
 
-            /* if (id == null)
-             {
-                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-             }
-             Species species = db.Species.SqlQuery("Select * from species where speciesid=@SpeciesID", new SqlParameter("@SpeciesID", id)).FirstOrDefault();
 
-             if (species == null)
-             {
-                 return HttpNotFound();
-             }
-             return View(species);*/
+            
+           /* if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Species species = db.Species.SqlQuery("Select * from species where speciesid=@SpeciesID", new SqlParameter("@SpeciesID", id)).FirstOrDefault();
+           
+            if (species == null)
+            {
+                return HttpNotFound();
+            }
+            return View(species);*/
         }
 
         // URL: Species/Add

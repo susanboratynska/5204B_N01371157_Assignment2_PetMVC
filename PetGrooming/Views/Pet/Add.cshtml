@@ -5,7 +5,7 @@
 
 <h2>Add a New Pet</h2>
 
-<form method="POST" action="/Pet/Add" class="form-group">
+<form method="POST" action="/Pet/Add" class="form-group float-left">
     <!-- TODO: format this nicely -->
     <div><span class="bold-label">Name:</span><input id="PetName" type="text" name="PetName" class="form-control" /></div>
     <div>
@@ -23,11 +23,16 @@
         </select>
     </div>
     <div><span class="bold-label">Weight:</span><input id="PetWeight" type="text" name="PetWeight" class="form-control" placeholder="Kg" /></div>
-    <div><span class="bold-label">Color:</span><input id="PetColor" type="text" name="PetColor" class="form-control" class="form-control" /></div>
+    <div><span class="bold-label">Color:</span><input id="PetColor" type="text" name="PetColor" class="form-control" /></div>
     <div><span class="bold-label">Notes:</span></div>
     <textarea id="PetNotes" name="PetNotes" class="form-control" rows="2">
 
     </textarea> <br />
+
     <input type="submit" value="Add Pet" class="btn btn-default" />
     <a href="/Pet/List" class="btn btn-default">Back to List</a>
 </form>
+<div class="float-right">
+    <div><span class="bold-label">Primary Owner: </span><input id="OwnerPrimary" value="" class="form-control placeholder" Placeholder="Link to Owner 1" /></div>
+    <div><span class="bold-label">Secondary Owner: </span><input id="OwnerSecondary" value="" class="form-control placeholder" Placeholder="Link to Owner 2" /></div>
+</div>
