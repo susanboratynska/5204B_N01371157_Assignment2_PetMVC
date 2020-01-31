@@ -68,7 +68,7 @@ namespace PetGrooming.Controllers
         {
             string query = "Insert into species (Name) values (@SpeciesName)";
 
-            // SqlParameter[] sqlparams = new SqlParameter[1]; // DON'T NEED TO CREATE AN ARRAY
+            // SqlParameter[] sqlparams = new SqlParameter[1]; // DON'T NEED TO CREATE AN ARRAY BECAUSE THERE'S ONLY 1 VARIABLE
 
             // sqlparams[0] = new SqlParameter("@SpeciesName", SpeciesName);
 
@@ -90,7 +90,8 @@ namespace PetGrooming.Controllers
         public ActionResult Update (int id)
         {
             // Get species name: my own code below
-            //Species selectedspecies = db.Species.SqlQuery("Select * from Species where SpeciesID = @SpeciesID", new SqlParameter("@SpeciesID", SpeciesID)).FirstOrDefault();
+            // Species selectedspecies = db.Species.SqlQuery("Select * from Species where SpeciesID = @SpeciesID", new SqlParameter("@SpeciesID", SpeciesID)).FirstOrDefault();
+            // Code above is teh condensed version of what's below:
 
             string query = "select * from species where SpeciesID = @id";
             SqlParameter param = new SqlParameter("@id", id);
